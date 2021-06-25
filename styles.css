@@ -1,0 +1,265 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+}
+
+header {
+  background: url("./images/header.jpg");
+  background-size: 100vw 100vh;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 37rem;
+  border-bottom: 1px solid rgba(167, 167, 167, .3);
+}
+
+.logo {
+  margin: auto 0;
+  height: 2.3rem;
+  /* uncomment filter to fix a badly cropped logo but it loses the majority of colors */
+  /* filter: invert(75%) hue-rotate(180deg) brightness(105%) contrast(105%); */
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 50%;
+  padding: 4rem 0;
+}
+
+.navigation-list li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, .8);
+  font-weight: 700;
+
+  transition: color .3s ease-in-out;
+}
+
+.navigation-list li a:hover {
+  color:rgba(221, 221, 221, 1);
+}
+
+.header-section {
+  color: rgba(255, 255, 255, 1);
+  padding: 15rem 10rem;
+  width: 90rem;
+  height: 70rem;
+  text-align: center;
+  margin: auto;
+}
+
+.header-section h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 6.4rem;
+  line-height: 7rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-section p {
+  font-size: 2.1rem;
+  color: rgba(255, 255, 255, .8);
+}
+
+.header-section button {
+  cursor: pointer;
+  margin-top: 7rem;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  padding: 1.5rem 5rem;
+  background: rgb(255, 75, 75);
+}
+
+#section-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 8rem 35rem;
+}
+
+.section-features__item {
+  width: 30rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.section-features__item > * {
+  color: rgb(31, 31, 31);
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.section-features__item > p {
+  font-size: 1.4rem;
+  color: rgb(59, 59, 59);
+}
+
+#section-works {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#section-works > * {
+  width: 25%;
+}
+
+#section-team {
+  padding: 10rem 33rem 15rem 33rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#section-team > article {
+  width: 27rem;
+}
+
+#section-team > article > h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+}
+
+#section-team > article > h3 {
+  color: red;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+#section-team > article > p {
+  font-size: 1.4rem;
+}
+
+.person-icon {
+  margin-top: 2rem;
+  color:rgb(219, 219, 219);
+  text-align: center;
+  width: 3.8rem;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* SECTION TESTIMONIALS */
+
+#section-testimonials {
+  height: 55vh;
+  overflow: hidden;
+  display: flex;
+}
+
+#section-testimonials > img {
+  margin-top: -6rem;
+  margin-bottom: -6rem;
+}
+
+#section-testimonials > aside {
+  padding: 10rem 27rem 15rem 10rem;
+  background:rgb(85, 52, 77);
+  color: white;
+}
+
+#section-testimonials > aside > h2 {
+  font-family: 'Cardo', serif;
+  font-weight: 300;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+/* SECTION DOWNLOAD */
+
+#section-download {
+  padding: 10rem 0;
+  text-align: center;
+}
+
+#section-download > h3 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+#section-download > h4 {
+  font-size: 1.35rem;
+  margin: 2rem 0 6rem 0;
+}
+
+#section-download > button {
+  cursor: pointer;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  padding: 1.5rem 10rem;
+  background: rgb(255, 75, 75);
+}
+
+/* FOOTER */
+
+footer {
+  color: white;
+  background:rgb(56, 61, 105);
+}
+
+.footer-info {
+  padding: 0 30rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-info__item {
+  padding: 8rem 0;
+  width: 37rem;
+  text-align: center;
+}
+
+.footer-info__item > h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-info__item > p {
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, .6); 
+}
+
+.footer-icon {
+  width: 5rem;
+  padding: 1rem 0;
+  font-size: 2.5rem;
+  border: 2px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.footer-copyright {
+  color: rgba(165, 165, 165, 0.8); 
+  padding: 3.5rem;
+  background: rgba(0,0,0, .2);
+  text-align: center;
+}
+
+.footer-copyright > p {
+  font-size: 1.4rem;
+  margin-bottom: .5rem;
+}
+
+.footer-copyright span {
+  color: white;
+  font-size: inherit
+}
