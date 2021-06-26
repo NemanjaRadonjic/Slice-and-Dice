@@ -5,7 +5,7 @@ html {
 
 * {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
 }
 
@@ -21,7 +21,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin: 0 37rem;
-  border-bottom: 1px solid rgba(167, 167, 167, .3);
+  border-bottom: 1px solid rgba(167, 167, 167, 0.3);
 }
 
 .logo {
@@ -41,14 +41,14 @@ header {
 
 .navigation-list li a {
   text-decoration: none;
-  color: rgba(255, 255, 255, .8);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 700;
 
-  transition: color .3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .navigation-list li a:hover {
-  color:rgba(221, 221, 221, 1);
+  color: rgba(221, 221, 221, 1);
 }
 
 .header-section {
@@ -61,7 +61,7 @@ header {
 }
 
 .header-section h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 6.4rem;
   line-height: 7rem;
   margin-bottom: 1.5rem;
@@ -69,7 +69,7 @@ header {
 
 .header-section p {
   font-size: 2.1rem;
-  color: rgba(255, 255, 255, .8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .header-section button {
@@ -112,9 +112,63 @@ header {
   flex-wrap: wrap;
 }
 
-#section-works > * {
+#section-works > div {
   width: 25%;
+  position: relative;
 }
+
+#section-works > div > img {
+  height: 100%;
+  width: 100%;
+}
+
+.section-works__about {
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+
+  transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.section-works__about:hover {
+  opacity: 1;
+  box-shadow: inset 0 0 5rem 16rem rgb(255, 75, 75, 0.8);
+}
+
+.section-works__about:hover > h2 {
+  top: 50%;
+}
+
+.section-works__about:hover > p {
+  bottom: 50%;
+}
+
+.section-works__about > h2 {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -130%);
+  font-size: 1.4rem;
+  color: white;
+
+  transition: top 0.5s ease-in-out;
+}
+
+.section-works__about > p {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 130%);
+  color: white;
+  font-size: 1.3rem;
+
+  transition: bottom 0.5s ease-in-out;
+}
+
+/* SECTION TEAM */
 
 #section-team {
   padding: 10rem 33rem 15rem 33rem;
@@ -130,7 +184,7 @@ header {
   font-size: 2.4rem;
   font-weight: 500;
   margin-top: 2rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 #section-team > article > h3 {
@@ -146,7 +200,7 @@ header {
 
 .person-icon {
   margin-top: 2rem;
-  color:rgb(219, 219, 219);
+  color: rgb(219, 219, 219);
   text-align: center;
   width: 3.8rem;
   padding: 1rem 0;
@@ -159,27 +213,74 @@ header {
 /* SECTION TESTIMONIALS */
 
 #section-testimonials {
+  position: relative;
+}
+
+.carousel-container {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  scroll-behavior: smooth;
+}
+
+.carousel {
+  scroll-behavior: smooth;
   height: 55vh;
+  min-width: 100%;
+  max-width: 100%;
   overflow: hidden;
   display: flex;
 }
 
-#section-testimonials > img {
+.carousel > img {
   margin-top: -6rem;
   margin-bottom: -6rem;
+  width: 50%;
 }
 
-#section-testimonials > aside {
-  padding: 10rem 27rem 15rem 10rem;
-  background:rgb(85, 52, 77);
+.carousel > aside {
+  width: 50%;
+  padding: 10rem 29rem 15rem 10rem;
+  background: rgb(85, 52, 77);
   color: white;
 }
 
-#section-testimonials > aside > h2 {
-  font-family: 'Cardo', serif;
+.carousel > aside > h2 {
+  font-family: "Cardo", serif;
   font-weight: 300;
   font-size: 4rem;
   margin-bottom: 3rem;
+}
+
+.carousel > aside > h3 {
+  font-size: 1.45rem;
+}
+
+.carousel-button__container {
+  height: 30px;
+  position: absolute;
+  bottom: 15%;
+  right: 27%;
+}
+
+.carousel-button {
+  cursor: pointer;
+  margin: 0.5rem;
+  height: 12px;
+  width: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+
+  transition: background 0.8s ease-in-out;
+}
+
+.carousel-button.active {
+  background: white;
+}
+
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* SECTION DOWNLOAD */
@@ -212,7 +313,7 @@ header {
 
 footer {
   color: white;
-  background:rgb(56, 61, 105);
+  background: rgb(56, 61, 105);
 }
 
 .footer-info {
@@ -235,7 +336,7 @@ footer {
 .footer-info__item > p {
   line-height: 2.5rem;
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, .6); 
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-icon {
@@ -248,18 +349,18 @@ footer {
 }
 
 .footer-copyright {
-  color: rgba(165, 165, 165, 0.8); 
+  color: rgba(165, 165, 165, 0.8);
   padding: 3.5rem;
-  background: rgba(0,0,0, .2);
+  background: rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
 .footer-copyright > p {
   font-size: 1.4rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-copyright span {
   color: white;
-  font-size: inherit
+  font-size: inherit;
 }
