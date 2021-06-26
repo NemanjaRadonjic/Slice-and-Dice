@@ -2,11 +2,11 @@
   class Carousel {
     constructor() {
       this.carousel = document.querySelector(".carousel");
-      this.carouselContainer = document.querySelector(".carousel-container");
-      this.carouselAmount = document.querySelectorAll(".carousel");
+      this.carouselContainer = document.querySelector(".carousel__container");
+      this.carouselAmount = document.querySelectorAll(".carousel__slider");
       this.testimonials = document.getElementById("section-testimonials");
       this.buttonContainer = document.querySelector(
-        ".carousel-button__container"
+        ".carousel__button-container"
       );
 
       this.renderCarouselButtons(
@@ -65,7 +65,7 @@
     renderCarouselButtons(carouselPositions) {
       carouselPositions.forEach((position, index) => {
         const button = document.createElement("button");
-        button.className = "carousel-button";
+        button.className = "carousel__button";
         position === 0 && button.classList.add("active");
         button.addEventListener("click", (event) => {
           this.handleClick(event, index);

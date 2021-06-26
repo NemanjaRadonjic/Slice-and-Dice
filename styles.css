@@ -9,7 +9,9 @@ html {
   font-size: 1.2rem;
 }
 
-header {
+/* HEADER */
+
+.header {
   background: url("./images/header.jpg");
   background-size: 100vw 100vh;
   height: 75vh;
@@ -24,14 +26,14 @@ header {
   border-bottom: 1px solid rgba(167, 167, 167, 0.3);
 }
 
-.logo {
+.navigation__logo {
   margin: auto 0;
   height: 2.3rem;
   /* uncomment filter to fix a badly cropped logo but it loses the majority of colors */
   /* filter: invert(75%) hue-rotate(180deg) brightness(105%) contrast(105%); */
 }
 
-.navigation-list {
+.navigation__list {
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -39,19 +41,19 @@ header {
   padding: 4rem 0;
 }
 
-.navigation-list li a {
+.navigation__list li a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 700;
 
   transition: color 0.3s ease-in-out;
 }
 
-.navigation-list li a:hover {
-  color: rgba(221, 221, 221, 1);
+.navigation__list li a:hover {
+  color: rgba(250, 250, 250, 1);
 }
 
-.header-section {
+.header__section {
   color: rgba(255, 255, 255, 1);
   padding: 15rem 10rem;
   width: 90rem;
@@ -60,69 +62,73 @@ header {
   margin: auto;
 }
 
-.header-section h1 {
+.header__main {
   font-family: "Open Sans", sans-serif;
   font-size: 6.4rem;
   line-height: 7rem;
   margin-bottom: 1.5rem;
 }
 
-.header-section p {
+.header__text {
   font-size: 2.1rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.header-section button {
-  cursor: pointer;
+.header__button {
   margin-top: 7rem;
-  border-radius: 2px;
-  color: rgba(255, 255, 255, 1);
-  border: none;
   padding: 1.5rem 5rem;
-  background: rgb(255, 75, 75);
 }
 
-#section-features {
+/* SECTION FEATURES */
+
+.features {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 8rem 35rem;
 }
 
-.section-features__item {
+.features__item {
   width: 30rem;
   padding: 2rem;
   text-align: center;
 }
 
-.section-features__item > * {
-  color: rgb(31, 31, 31);
+.features__heading,
+.features__text {
   margin: 1.5rem 0;
   font-size: 1.4rem;
   line-height: 1.8rem;
 }
 
-.section-features__item > p {
-  font-size: 1.4rem;
+.features__heading {
+  color: rgb(31, 31, 31);
+}
+
+.features__text {
   color: rgb(59, 59, 59);
 }
 
-#section-works {
+/* SECTION WORKS */
+
+.works {
   display: flex;
   flex-wrap: wrap;
 }
 
-#section-works > div {
+.works__item {
+  box-sizing: border-box;
+  border: 1px solid white;
   width: 25%;
   position: relative;
 }
 
-#section-works > div > img {
+.works__image {
   height: 100%;
   width: 100%;
 }
 
-.section-works__about {
+.works__about {
   cursor: pointer;
   position: absolute;
   text-align: center;
@@ -133,20 +139,20 @@ header {
   transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.section-works__about:hover {
+.works__about:hover {
   opacity: 1;
   box-shadow: inset 0 0 5rem 16rem rgb(255, 75, 75, 0.8);
 }
 
-.section-works__about:hover > h2 {
+.works__about:hover > .works__heading {
   top: 50%;
 }
 
-.section-works__about:hover > p {
+.works__about:hover > .works__text {
   bottom: 50%;
 }
 
-.section-works__about > h2 {
+.works__heading {
   position: absolute;
   top: 0%;
   left: 50%;
@@ -157,7 +163,7 @@ header {
   transition: top 0.5s ease-in-out;
 }
 
-.section-works__about > p {
+.works__text {
   position: absolute;
   bottom: 0%;
   left: 50%;
@@ -170,60 +176,57 @@ header {
 
 /* SECTION TEAM */
 
-#section-team {
+.team {
   padding: 10rem 33rem 15rem 33rem;
   display: flex;
   justify-content: space-evenly;
 }
 
-#section-team > article {
+.team__item {
   width: 27rem;
 }
 
-#section-team > article > h2 {
+.team__heading {
   font-size: 2.4rem;
   font-weight: 500;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
 
-#section-team > article > h3 {
+.team__sub-heading {
   color: red;
   font-weight: 500;
   font-size: 1.4rem;
   margin-bottom: 2rem;
 }
 
-#section-team > article > p {
+.team_text {
   font-size: 1.4rem;
 }
 
-.person-icon {
+.social-icon--team {
   margin-top: 2rem;
   color: rgb(219, 219, 219);
   text-align: center;
   width: 3.8rem;
-  padding: 1rem 0;
   font-size: 1.5rem;
   border: 1px solid rgb(219, 219, 219);
-  border-radius: 3px;
-  cursor: pointer;
 }
 
 /* SECTION TESTIMONIALS */
 
-#section-testimonials {
+.carousel {
   position: relative;
 }
 
-.carousel-container {
+.carousel__container {
   max-width: 100%;
   overflow: hidden;
   display: flex;
   scroll-behavior: smooth;
 }
 
-.carousel {
+.carousel__slider {
   scroll-behavior: smooth;
   height: 55vh;
   min-width: 100%;
@@ -232,38 +235,38 @@ header {
   display: flex;
 }
 
-.carousel > img {
+.carousel__image {
   margin-top: -6rem;
   margin-bottom: -6rem;
   width: 50%;
 }
 
-.carousel > aside {
+.carousel__testimonial-container {
   width: 50%;
   padding: 10rem 29rem 15rem 10rem;
   background: rgb(85, 52, 77);
   color: white;
 }
 
-.carousel > aside > h2 {
+.carousel__testimonial {
   font-family: "Cardo", serif;
   font-weight: 300;
   font-size: 4rem;
   margin-bottom: 3rem;
 }
 
-.carousel > aside > h3 {
+.carousel__author {
   font-size: 1.45rem;
 }
 
-.carousel-button__container {
+.carousel__button-container {
   height: 30px;
   position: absolute;
   bottom: 15%;
   right: 27%;
 }
 
-.carousel-button {
+.carousel__button {
   cursor: pointer;
   margin: 0.5rem;
   height: 12px;
@@ -275,92 +278,130 @@ header {
   transition: background 0.8s ease-in-out;
 }
 
-.carousel-button.active {
+.carousel__button.active {
   background: white;
 }
 
-.carousel-button:hover {
+.carousel__button:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 
 /* SECTION DOWNLOAD */
 
-#section-download {
+.download {
   padding: 10rem 0;
   text-align: center;
 }
 
-#section-download > h3 {
+.download__heading {
   font-size: 3rem;
   font-weight: 300;
 }
 
-#section-download > h4 {
+.download__text {
   font-size: 1.35rem;
   margin: 2rem 0 6rem 0;
 }
 
-#section-download > button {
-  cursor: pointer;
-  border-radius: 2px;
-  color: rgba(255, 255, 255, 1);
-  border: none;
+.download__button {
   padding: 1.5rem 10rem;
-  background: rgb(255, 75, 75);
 }
 
 /* FOOTER */
 
-footer {
+.footer {
   color: white;
   background: rgb(56, 61, 105);
 }
 
-.footer-info {
+.footer__info {
   padding: 0 30rem;
   display: flex;
   justify-content: space-around;
 }
 
-.footer-info__item {
+.footer__item {
   padding: 8rem 0;
   width: 37rem;
   text-align: center;
 }
 
-.footer-info__item > h2 {
+.footer__item-heading {
   font-size: 1.7rem;
   margin-bottom: 1.5rem;
 }
 
-.footer-info__item > p {
+.footer__item-text {
   line-height: 2.5rem;
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-icon {
+.social-icon--footer {
   width: 5rem;
-  padding: 1rem 0;
   font-size: 2.5rem;
   border: 2px solid white;
-  border-radius: 3px;
-  cursor: pointer;
 }
 
-.footer-copyright {
+.footer__copyright {
   color: rgba(165, 165, 165, 0.8);
   padding: 3.5rem;
   background: rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-.footer-copyright > p {
+.footer__text {
   font-size: 1.4rem;
   margin-bottom: 0.5rem;
 }
 
-.footer-copyright span {
+.footer__text--light {
   color: white;
   font-size: inherit;
+}
+
+/* Reusable stylings */
+
+.button--main {
+  cursor: pointer;
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  background: rgb(255, 75, 75);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.button--main:hover {
+  transform: translateY(-5%);
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+}
+.button--main:active {
+  transform: translateY(-3%);
+}
+
+.social-icon {
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 1rem 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(56, 61, 105, 1);
+  box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 75, 75, 1);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 75, 75);
 }
