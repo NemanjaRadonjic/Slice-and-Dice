@@ -3,17 +3,14 @@
     constructor() {
       this.carousel = document.querySelector(".carousel");
       this.carouselContainer = document.querySelector(".carousel__container");
-      this.carouselAmount = document.querySelectorAll(".carousel__slider");
+      this.carousels = document.querySelectorAll(".carousel__slider");
       this.testimonials = document.getElementById("section-testimonials");
       this.buttonContainer = document.querySelector(
         ".carousel__button-container"
       );
 
       this.renderCarouselButtons(
-        this.getCarouselPositions(
-          this.carouselAmount,
-          this.carousel.offsetWidth
-        )
+        this.getCarouselPositions(this.carousels, this.carousel.offsetWidth)
       );
 
       this.interval = this.automaticCarousel.bind(this, this.buttonContainer)();
@@ -21,7 +18,7 @@
 
     handleClick(event, index) {
       const carouselPositions = this.getCarouselPositions(
-        this.carouselAmount,
+        this.carousels,
         this.carousel.offsetWidth
       );
 
@@ -47,14 +44,14 @@
     automaticCarousel(buttonContainer) {
       return setInterval(() => {
         const carouselPositions = this.getCarouselPositions(
-          this.carouselAmount,
+          this.carousels,
           this.carousel.offsetWidth
         );
         let index = 0;
         buttonContainer.childNodes.forEach((item, i) => {
           if (item.classList.contains("active")) {
             item.classList.remove("active");
-            i === 4 ? (index = 0) : (index = i + 1);
+            i === this.carousels.length - 1 ? (index = 0) : (index = i + 1);
           }
         });
         buttonContainer.childNodes[index].classList.add("active");
